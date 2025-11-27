@@ -106,7 +106,7 @@ const CHARS: &[char] = &[
     'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 ];
 
-pub const RENDEZVOUS_SERVERS: &[&str] = &["remote.medvedev-it.com"];
+pub const RENDEZVOUS_SERVERS: &[&str] = &["remote.west-e.ru"];
 pub const RS_PUB_KEY: &str = "tNNd2udBSqSnbKAd9s1kZli1cNlbl3YbTDOUTRLOfDE=";
 
 pub const RENDEZVOUS_PORT: i32 = 21116;
@@ -2335,7 +2335,7 @@ fn is_option_can_save(
 
 #[inline]
 pub fn is_incoming_only() -> bool {
-    true
+    false
 }
 
 #[inline]
@@ -2363,7 +2363,7 @@ pub fn is_disable_tcp_listen() -> bool {
 
 #[inline]
 pub fn is_disable_settings() -> bool {
-    true
+    false
 }
 
 #[inline]
@@ -2378,7 +2378,7 @@ pub fn is_disable_account() -> bool {
 
 #[inline]
 pub fn is_disable_installation() -> bool {
-    true
+    false
 }
 
 // This function must be kept the same as the one in flutter and sciter code.
@@ -2405,6 +2405,11 @@ pub fn use_ws() -> bool {
 
 pub fn allow_insecure_tls_fallback() -> bool {
     let option = keys::OPTION_ALLOW_INSECURE_TLS_FALLBACK;
+    option2bool(option, &Config::get_option(option))
+}
+
+pub fn allow_hostname_as_id() -> bool {
+    let option = true;
     option2bool(option, &Config::get_option(option))
 }
 
