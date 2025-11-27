@@ -2329,7 +2329,7 @@ fn is_option_can_save(
 
 #[inline]
 pub fn is_incoming_only() -> bool {
-    false
+    true
 }
 
 #[inline]
@@ -2357,7 +2357,7 @@ pub fn is_disable_tcp_listen() -> bool {
 
 #[inline]
 pub fn is_disable_settings() -> bool {
-    false
+    true
 }
 
 #[inline]
