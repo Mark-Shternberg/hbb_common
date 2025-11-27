@@ -2403,7 +2403,7 @@ pub fn allow_insecure_tls_fallback() -> bool {
 }
 
 pub fn allow_hostname_as_id() -> bool {
-    true
+    false
 }
 
 pub mod keys {
