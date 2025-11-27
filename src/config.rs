@@ -820,15 +820,9 @@ impl Config {
 
     #[cfg(not(any(target_os = "android", target_os = "ios")))]
     fn gen_id() -> Option<String> {
-        let hostname_as_id = BUILTIN_SETTINGS
-            .read()
-            .unwrap()
-            .get(keys::OPTION_ALLOW_HOSTNAME_AS_ID)
-            .map(|v| option2bool(keys::OPTION_ALLOW_HOSTNAME_AS_ID, v))
-            .unwrap_or(false);
-        if hostname_as_id {
+        if allow_hostname_as_id() {
             match whoami::fallible::hostname() {
-                Ok(h) => Some(h.replace(" ", "-")),
+                Ok(h) => Some(h.replace(' ', "-")),
                 Err(e) => {
                     log::warn!("Failed to get hostname, \"{}\", fallback to auto id", e);
                     Self::get_auto_id()
@@ -2409,8 +2403,7 @@ pub fn allow_insecure_tls_fallback() -> bool {
 }
 
 pub fn allow_hostname_as_id() -> bool {
-    let option = true;
-    option2bool(option, &Config::get_option(option))
+    true
 }
 
 pub mod keys {
