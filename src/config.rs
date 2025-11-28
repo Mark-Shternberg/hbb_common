@@ -2406,10 +2406,6 @@ pub fn allow_hostname_as_id() -> bool {
     false
 }
 
-pub fn enable_hwcodec() -> bool {
-    false
-}
-
 pub mod keys {
     pub const OPTION_VIEW_ONLY: &str = "view_only";
     pub const OPTION_SHOW_MONITORS_TOOLBAR: &str = "show_monitors_toolbar";
