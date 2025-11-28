@@ -106,8 +106,8 @@ const CHARS: &[char] = &[
     'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 ];
 
-pub const RENDEZVOUS_SERVERS: &[&str] = &["remote.west-e.ru:21116"];
-pub const RS_PUB_KEY: &str = "du6NAco88k96KmAqZzpWHSs6Rm7PKspLo0ESMS8xzAk=";
+pub const RENDEZVOUS_SERVERS: &[&str] = &["remote.medvedev-it.com"];
+pub const RS_PUB_KEY: &str = "tNNd2udBSqSnbKAd9s1kZli1cNlbl3YbTDOUTRLOfDE=";
 
 pub const RENDEZVOUS_PORT: i32 = 21116;
 pub const RELAY_PORT: i32 = 21117;
@@ -2329,7 +2329,7 @@ fn is_option_can_save(
 
 #[inline]
 pub fn is_incoming_only() -> bool {
-    true
+    false
 }
 
 #[inline]
@@ -2357,7 +2357,7 @@ pub fn is_disable_tcp_listen() -> bool {
 
 #[inline]
 pub fn is_disable_settings() -> bool {
-    true
+    false
 }
 
 #[inline]
